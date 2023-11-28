@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Biryani:wght@400;600;700&family=Mitr:wght@400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+	@apply mx-auto max-w-sm  md:max-w-[768px] lg:max-w-[1024px] 2xl:max-w-[1536px] sm:px-16 px-6;
+}
+
+.section {
+	@apply sm:mt-20 mt-8;
+}
+
+.search-input::after {
+	content: "";
+	position: absolute;
+	color: white;
+	z-index: 20;
+	bottom: 8px;
+	left: 45px;
+  right: 20px;
+	height: 0.175rem;
+	background: #fde7e7;
+	transform-origin: 0% 100%;
+	transform: scale(0, 1);
+	transition: transform 0.3s ease;
+}
+
+.search-input:focus-within::after {
+	transform: scale(1, 1);
+}
+
+p,
+span {
+	font-family: "Biryani", "Courier New", Courier, monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Mitr", "Arial";
+}
