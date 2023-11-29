@@ -9,7 +9,7 @@ export default async function Home() {
 	const data: Data[] = await results.results;
 
 	return (
-		<main className="">
+		<main className="mt-20">
 			<Feed data={data} />
 		</main>
 	);

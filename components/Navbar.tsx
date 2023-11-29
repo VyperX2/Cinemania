@@ -5,7 +5,7 @@ const Navbar = () => {
 	const [value, setValue] = useState<string>("");
 
 	return (
-		<nav className=" h-20 bg-secondary flex items-center font-body">
+		<nav className="fixed w-full top-0 h-20 bg-secondary flex items-center font-body z-10">
 			<p className=" ml-4"></p>
 			<form className="relative search-input mx-auto w-[80vw] bg-background pr-8 pl-2 py-3 rounded-lg shadow-md flex gap-4 items-center">
 				<button>

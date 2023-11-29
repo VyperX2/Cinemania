@@ -1,5 +1,5 @@
 export interface Data {
-  id : number
+	id: number;
 	backdrop_path: string;
 	original_language: string;
 	original_title: string;
@@ -9,4 +9,5 @@ export interface Data {
 	title: string;
 	vote_average: number;
 	vote_count: number;
+	genres: { id: number; name: string }[];
 }

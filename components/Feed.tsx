@@ -1,4 +1,3 @@
-"use client";
 import { Data } from "@/types/Data";
 import MovieCard from "./MovieCard";
 
@@ -6,12 +5,11 @@ interface FeedProps {
 	data: Data[];
 }
 const Feed = ({ data }: FeedProps) => {
-	console.log(data);
 	return (
-		<section className="flex flex-col">
-			<div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 place-items-center">
+		<section className="flex flex-col container">
+			<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 place-items-center">
 				{data?.map((movie) => (
-					<MovieCard {...movie} />
+					<MovieCard key={movie.id} {...movie} />
 				))}
 			</div>
 		</section>
