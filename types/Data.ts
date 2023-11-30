@@ -11,3 +11,13 @@ export interface Data {
 	vote_count: number;
 	genres: { id: number; name: string }[];
 }
+
+export interface Actors {
+	id: number;
+	name: string;
+	original_name: string;
+	popularity: number;
+	profile_path: string;
+	credit_id: number;
+	order: number;
+}

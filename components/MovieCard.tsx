@@ -1,22 +1,11 @@
-'use client'
+"use client";
 import { Data } from "@/types/Data";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const MovieCard = ({
-	id,
-	backdrop_path,
-	original_language,
-	original_title,
-	overview,
-	poster_path,
-	release_date,
-	title,
-	vote_average,
-	vote_count,
-}: Data) => {
+const MovieCard = ({ id, poster_path, title }: Data) => {
 	const router = useRouter();
-
+	// Todo Fix the title wrap
 	return (
 		<article
 			onClick={() => router.push(`/movie/${id}`)}

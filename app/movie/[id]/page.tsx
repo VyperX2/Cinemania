@@ -1,5 +1,5 @@
 import CurrentMovie from "@/components/CurrentMovie";
-import { Data } from "@/types/Data";
+import { Actors, Data } from "@/types/Data";
 
 const MoviePage = async ({ params }: { params: { id: number } }) => {
 	const response = await fetch(
@@ -13,10 +13,10 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
 	const { cast } = await res.json();
 
 	console.log(cast);
-	const actors = cast.slice(0, 6);
+	const actors: Actors[] = cast.slice(0, 6);
 	return (
 		<section className="mt-20 flex justify-center container">
-			<CurrentMovie {...data} />
+			<CurrentMovie {...data} actors={actors} />
 		</section>
 	);
 };
