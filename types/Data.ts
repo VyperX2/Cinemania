@@ -20,4 +20,5 @@ export interface Actors {
 	profile_path: string;
 	credit_id: number;
 	order: number;
+	character: string;
 }

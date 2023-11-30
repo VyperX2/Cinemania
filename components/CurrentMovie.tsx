@@ -20,7 +20,7 @@ const CurrentMovie = ({
 	console.log(actors);
 	return (
 		<section className="grid grid-cols-1 lg:grid-cols-2 w-full place-items-center mt-8">
-			<div className="relative sm:h-[550px] sm:w-[384px] w-[295px] h-[470px] rounded-2xl overflow-hidden   shadow-2xl shadow-black dark:shadow-gray-600  ">
+			<div className="relative sm:h-[550px] sm:w-[384px] w-[295px] h-[470px] rounded-2xl overflow-hidden   shadow-2xl shadow-black dark:shadow-gray-600 lg:-mt-24 lg:mr-20 2xl:mr-0  ">
 				<img
 					alt="movie_poster"
 					src={`https://image.tmdb.org/t/p/original//${poster_path}`}
@@ -31,7 +31,7 @@ const CurrentMovie = ({
 					// nextjs Image is taking too long to load! Will fix it later
 				/>
 			</div>
-			<div className="flex flex-col gap-y-8  lg:-mt-20 mt-10 dark:text-white">
+			<div className="flex flex-col gap-y-8   mt-10 dark:text-white">
 				<h1 className="lg:text-4xl text-2xl md:text-3xl font-semibold text-center whitespace-nowrap">
 					{original_title}
 					<span> ({release_date.substring(0, 4)})</span>
@@ -47,7 +47,7 @@ const CurrentMovie = ({
 					<p className=" text-md">{overview}</p>
 				</div>
 				<h6 className="text-2xl">Top Cast</h6>
-				<div className=" flex flex-wrap">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
 					{actors.map((actor) => (
 						<ActorCard key={actor.id} {...actor} />
 					))}
