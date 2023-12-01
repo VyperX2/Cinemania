@@ -14,7 +14,7 @@ const MovieCard = ({ id, poster_path, title, i }: Data & { i: number }) => {
 		animate: {
 			opacity: 100,
 			scale: 1,
-			transition: { delay: i * 0.05, ease: "easeInOut" },
+			transition: { delay: i * 0.15, ease: "easeInOut" },
 		},
 	};
 	// TODO Animate on scroll and remove the delay for scroll

@@ -48,8 +48,8 @@ const CurrentMovie = ({
 				</div>
 				<h6 className="text-2xl">Top Cast</h6>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-					{actors.map((actor) => (
-						<ActorCard key={actor.id} {...actor} />
+					{actors.map((actor, index) => (
+						<ActorCard i={index} key={actor.id} {...actor} />
 					))}
 				</div>
 
