@@ -33,7 +33,7 @@ const CurrentMovie = ({
 			</div>
 			<div className="flex flex-col gap-y-8   mt-10 dark:text-white">
 				<h1 className="lg:text-4xl text-2xl md:text-3xl font-semibold text-center whitespace-nowrap">
-					{original_title}
+					{original_title.substring(0 , 30)}
 					<span> ({release_date.substring(0, 4)})</span>
 				</h1>
 				<p className="text-center">Rating : {vote_average}</p>
@@ -47,7 +47,7 @@ const CurrentMovie = ({
 					<p className=" text-md">{overview}</p>
 				</div>
 				<h6 className="text-2xl">Top Cast</h6>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 sm:place-items-start place-items-center">
 					{actors.map((actor, index) => (
 						<ActorCard i={index} key={actor.id} {...actor} />
 					))}
