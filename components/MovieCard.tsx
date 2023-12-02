@@ -2,7 +2,7 @@
 import { Data } from "@/types/Data";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const MovieCard = ({ id, poster_path, title, i }: Data & { i: number }) => {
 	setTimeout(() => window.scrollTo(0, 0), 0);
@@ -14,7 +14,7 @@ const MovieCard = ({ id, poster_path, title, i }: Data & { i: number }) => {
 		animate: {
 			opacity: 100,
 			scale: 1,
-			transition: { delay: i * 0.15, ease: "easeInOut" },
+			transition: { delay: i * 0.05, ease: "easeInOut" },
 		},
 	};
 	// TODO Animate on scroll and remove the delay for scroll

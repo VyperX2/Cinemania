@@ -4,16 +4,11 @@ import Image from "next/image";
 import ActorCard from "./ActorCard";
 
 const CurrentMovie = ({
-	backdrop_path,
-	id,
-	original_language,
 	original_title,
 	overview,
 	poster_path,
 	release_date,
-	title,
 	vote_average,
-	vote_count,
 	genres,
 	actors,
 }: Data & { actors: Actors[] }) => {
@@ -33,7 +28,7 @@ const CurrentMovie = ({
 			</div>
 			<div className="flex flex-col gap-y-8   mt-10 dark:text-white">
 				<h1 className="lg:text-4xl text-2xl md:text-3xl font-semibold text-center whitespace-nowrap">
-					{original_title.substring(0 , 30)}
+					{original_title.substring(0, 30)}
 					<span> ({release_date.substring(0, 4)})</span>
 				</h1>
 				<p className="text-center">Rating : {vote_average}</p>
@@ -52,17 +47,6 @@ const CurrentMovie = ({
 						<ActorCard i={index} key={actor.id} {...actor} />
 					))}
 				</div>
-
-				{/* <div className="flex justify-between w-full">
-					<h4>
-						Language :{" "}
-						<span className=" font-semibold">{original_language}</span>
-					</h4>
-					<h4>
-						Release Date :{" "}
-						<span className=" font-semibold">{release_date} </span>
-					</h4>
-				</div> */}
 			</div>
 		</section>
 	);
