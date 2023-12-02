@@ -12,6 +12,7 @@ const Navbar = () => {
 				onSubmit={(e) => {
 					e.preventDefault();
 					router.push(`/search/${value}`);
+					setValue("");
 				}}
 				className="relative search-input mx-auto w-[80vw] bg-background pr-8 pl-2 py-3 rounded-lg shadow-md flex gap-4 items-center"
 			>
