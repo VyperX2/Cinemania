@@ -26,7 +26,7 @@ const CurrentMovie = ({
 					// nextjs Image is taking too long to load! Will fix it later
 				/>
 			</div>
-			<div className="flex flex-col gap-y-8   mt-10 dark:text-white">
+			<div className="flex flex-col gap-y-8   mt-10">
 				<h1 className="lg:text-4xl text-2xl md:text-3xl font-semibold text-center whitespace-nowrap">
 					{original_title.substring(0, 30)}
 					<span> ({release_date.substring(0, 4)})</span>

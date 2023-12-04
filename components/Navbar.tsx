@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { DarkModeContext } from "@/context/DarkModeContext";
 import { useRouter } from "next/navigation";
 const Navbar = () => {
 	const [value, setValue] = useState<string>("");
+	const { toggleDarkMode  } : any = useContext(DarkModeContext);
 	const router = useRouter();
 	return (
 		<nav className="fixed w-full top-0 h-20 gap-4 bg-secondary flex items-center font-body z-10 px-6">
@@ -37,7 +39,7 @@ const Navbar = () => {
 					placeholder="Search for a movie..."
 				/>
 			</form>
-			<button className="">
+			<button onClick={toggleDarkMode}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="32"
