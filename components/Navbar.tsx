@@ -1,12 +1,14 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useRouter } from "next/navigation";
+import { ThemeContext } from "@/context/ThemeContext";
 const Navbar = () => {
+	const { theme, switchDark, switchLight } = useContext(ThemeContext);
 	const [value, setValue] = useState<string>("");
 	const router = useRouter();
 	return (
-		<nav className="fixed w-full top-0 h-20 gap-4 bg-secondary flex items-center font-body z-10 px-6">
+		<nav className="fixed w-full top-0 h-20 gap-4 dark:bg-secondary text-orange-600 bg-[#b32100] dark:text-text flex items-center font-body z-10 px-6 ">
 			<h4 onClick={() => router.push("/")} className="  text-xl cursor-pointer">
 				CINEMANIA
 			</h4>
@@ -16,7 +18,7 @@ const Navbar = () => {
 					router.push(`/search/${value}`);
 					setValue("");
 				}}
-				className="relative search-input mx-auto w-[80vw] bg-background pr-8 pl-2 py-3 rounded-lg shadow-md flex gap-4 items-center"
+				className="relative search-input mx-auto w-[80vw] bg-[##fde7e7] dark:bg-background pr-8 pl-2 py-3 rounded-lg shadow-md flex gap-4 items-center"
 			>
 				<button>
 					<Image
@@ -37,7 +39,7 @@ const Navbar = () => {
 					placeholder="Search for a movie..."
 				/>
 			</form>
-			<button>
+			<button onClick={() => (theme === "dark" ? switchLight() : switchDark())}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="32"

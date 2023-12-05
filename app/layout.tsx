@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
+import ThemeProvider from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
 	title: "Cinemania",
@@ -13,10 +14,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className="dark">
+		<html lang="en">
 			<body className="dark:bg-background dark:text-text ">
-				<Navbar />
-				<main>{children}</main>
+				<ThemeProvider>
+					<Navbar />
+					<main className="dark:bg-background dark:text-text ">{children}</main>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
