@@ -13,7 +13,7 @@ const MoviePoster = ({ posterMovie }) => {
 						<h4 className=" text-lg md:text-3xl text-white">
 							{posterMovie.original_title}
 						</h4>
-						<h4 className=" text-sm md:w-[50%] w-full text-white">
+						<h4 className=" text-sm md:w-[50%] w-full text-white hidden sm:block ">
 							{posterMovie.overview}
 						</h4>
 					</div>
