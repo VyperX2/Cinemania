@@ -1,6 +1,15 @@
-const MoviePoster = ({ posterMovie }) => {
+'use client'
+import { Data } from "@/types/Data";
+import { useRouter } from "next/navigation";
+
+const MoviePoster = ({ posterMovie }: { posterMovie: Data }) => {
+	// console.log("THIS IS A POSTER ", { posterMovie });
+	const router = useRouter();
 	return (
-		<div className="container pt-8">
+		<div
+			onClick={() => router.push(`/movie/${posterMovie.id}`)}
+			className="container pt-8"
+		>
 			<div>
 				<div
 					style={{

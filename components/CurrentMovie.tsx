@@ -1,6 +1,7 @@
 "use client";
 import { Actors, Data } from "@/types/Data";
 import Image from "next/image";
+import { easeIn, motion } from "framer-motion";
 import ActorCard from "./ActorCard";
 
 const CurrentMovie = ({
@@ -14,9 +15,15 @@ const CurrentMovie = ({
 }: Data & { actors: Actors[] }) => {
 	console.log(actors);
 	return (
-		<section className="grid grid-cols-1 lg:grid-cols-2 w-full place-items-center mt-8">
-			<div className="relative sm:h-[550px] sm:w-[384px] w-[295px] h-[470px] rounded-2xl overflow-hidden   shadow-2xl shadow-black dark:shadow-gray-600 lg:-mt-24 lg:mr-20 2xl:mr-0  ">
-				<img
+		<section className="grid grid-cols-1 lg:grid-cols-2 w-full place-items-center mt-8 h-screen ">
+			<motion.div
+				initial={{ opacity: 0, scale: 0 }}
+				animate={{ opacity: 1, scale: 1 , transition : { delay : 0.22 , ease : easeIn} }}
+				className="relative sm:h-[550px] sm:w-[384px] w-[295px] h-[470px] rounded-2xl overflow-hidden   shadow-2xl shadow-black dark:shadow-gray-600 lg:-mt-24 lg:mr-20 2xl:mr-0  "
+			>
+				<motion.img
+					initial={{ opacity: 0, scale: 0 }}
+					animate={{ opacity: 1, scale: 1 }}
 					alt="movie_poster"
 					src={`https://image.tmdb.org/t/p/original//${poster_path}`}
 					// fill
@@ -25,7 +32,7 @@ const CurrentMovie = ({
 					loading="eager"
 					// nextjs Image is taking too long to load! Will fix it later
 				/>
-			</div>
+			</motion.div>
 			<div className="flex flex-col gap-y-8   mt-10">
 				<h1 className="lg:text-4xl text-2xl md:text-3xl font-semibold text-center whitespace-nowrap">
 					{original_title.substring(0, 30)}
