@@ -1,6 +1,5 @@
 import { Actors } from "@/types/Data";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 const ActorCard = ({
 	id,
@@ -11,11 +10,9 @@ const ActorCard = ({
 }: Actors & { i: number }) => {
 	const router = useRouter();
 	return (
-		<motion.article
+		<article
 			onClick={() => router.push(`/actors/${id}`)}
 			className="flex flex-col cursor-pointer"
-			initial={{ y: 100, opacity: 0 }}
-			animate={{ y: 0, opacity: 1, transition: { delay: i * 0.15 } }}
 		>
 			<img
 				loading="eager"
@@ -27,7 +24,7 @@ const ActorCard = ({
 			/>
 			<p className="text-center mt-1">{name}</p>
 			<p className="text-center text-gray-500">{character}</p>
-		</motion.article>
+		</article>
 	);
 };
 
