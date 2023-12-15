@@ -1,12 +1,15 @@
-'use client'
+"use client";
 import { Data } from "@/types/Data";
 import { useRouter } from "next/navigation";
+import { easeIn, motion } from "framer-motion";
 
 const MoviePoster = ({ posterMovie }: { posterMovie: Data }) => {
 	// console.log("THIS IS A POSTER ", { posterMovie });
 	const router = useRouter();
 	return (
-		<div
+		<motion.div
+      initial={{opacity : 0,}}
+      animate={{opacity : 1 }}
 			onClick={() => router.push(`/movie/${posterMovie.id}`)}
 			className="container pt-8"
 		>
@@ -28,7 +31,7 @@ const MoviePoster = ({ posterMovie }: { posterMovie: Data }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
