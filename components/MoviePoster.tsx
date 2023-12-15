@@ -1,28 +1,30 @@
 "use client";
 import { Data } from "@/types/Data";
 import { useRouter } from "next/navigation";
-import gsap from "gsap";
-import { useEffect } from "react";
+// import gsap from "gsap";
+// import { useEffect } from "react";
 
 const MoviePoster = ({ posterMovie }: { posterMovie: Data }) => {
-	useEffect(() => {
-		// gsap.to(".anim1", { scale : 0 , opacity : 0 });
-		gsap.from(".anim1", { opacity: 0, duration: 1, y: -50 });
-	}, []);
-	gsap.from(".anim1", { opacity: 0, duration: 1 });
+	// useEffect(() => {
+	// 	// gsap.to(".anim1", { scale : 0 , opacity : 0 });
+	// 	gsap.from(".anim1", { opacity: 0, duration: 1, y: -50 , delay : 0.8 });
+  //   // const tl = gsap.timeline()
+  //   // tl.to('.anim1' , { opacity : 0 , duration : 1})
+	// }, []);
+	// gsap.from(".anim1", { opacity: 0, duration: 1 });
 	// console.log("THIS IS A POSTER ", { posterMovie });
 	const router = useRouter();
 	return (
 		<div
 			onClick={() => router.push(`/movie/${posterMovie.id}`)}
-			className="container pt-8 anim1"
+			className="container pt-8 "
 		>
 			<div>
 				<div
 					style={{
 						backgroundImage: `url(https://image.tmdb.org/t/p/original//${posterMovie.backdrop_path})`,
 					}}
-					className=" mx-auto 2xl:w-[95%] lg:w-[90%] md:w-[84%] w-[75%] md:h-[450px] h-64 bg-cover bg-center rounded-md relative cursor-pointer poster overflow-hidden "
+					className="anim1 mx-auto 2xl:w-[95%] lg:w-[90%] md:w-[84%] w-[75%] md:h-[450px] h-64 bg-cover bg-center rounded-md relative cursor-pointer poster overflow-hidden "
 				>
 					<div className=" absolute w-full h-full bg-black/30" />
 					<div className=" absolute bottom-3 flex flex-col left-3 ">
