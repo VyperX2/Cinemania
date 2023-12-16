@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import { easeIn, motion } from "framer-motion"
 
 const MovieCard = ({ id, poster_path, title, i }: Data & { i: number }) => {
-	setTimeout(() => window.scrollTo(0, 0), 0);
-	// Scale property was causing the window to scroll to the center
+	
+	
 	const router = useRouter();
 	// Todo Fix the title wrap
 

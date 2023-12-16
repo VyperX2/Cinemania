@@ -12,9 +12,9 @@ const CurrentMovie = ({
 	genres,
 	actors,
 }: Data & { actors: Actors[] }) => {
-	console.log(actors);
+	// console.log(actors);
 	return (
-		<section className="grid grid-cols-1 lg:grid-cols-2 w-full place-items-center mt-8 h-screen ">
+		<section className="grid grid-cols-1 lg:grid-cols-2 w-full place-items-center mt-8 ">
 			<div className="relative sm:h-[550px] sm:w-[384px] w-[295px] h-[470px] rounded-2xl overflow-hidden   shadow-2xl shadow-black dark:shadow-gray-600 lg:-mt-24 lg:mr-20 2xl:mr-0  ">
 				<img
 					alt="movie_poster"
@@ -42,7 +42,7 @@ const CurrentMovie = ({
 					<p className=" text-md">{overview}</p>
 				</div>
 				<h6 className="text-2xl">Top Cast</h6>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 sm:place-items-start place-items-center">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:place-items-start place-items-center">
 					{actors.map((actor, index) => (
 						<ActorCard i={index} key={actor.id} {...actor} />
 					))}
