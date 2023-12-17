@@ -28,7 +28,7 @@ const CurrentMovie = ({
 			</div>
 			<div className="flex flex-col gap-y-8   mt-10">
 				<h1 className="lg:text-4xl text-2xl md:text-3xl font-semibold text-center whitespace-nowrap">
-					{original_title.substring(0, 30)}
+					{ original_title.length > 22 ?  `${original_title.substring(0, 22)}...` : original_title}
 					<span> ({release_date.substring(0, 4)})</span>
 				</h1>
 				<p className="text-center">Rating : {vote_average}</p>
