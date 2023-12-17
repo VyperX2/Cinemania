@@ -14,7 +14,7 @@ const CurrentMovie = ({
 }: Data & { actors: Actors[] }) => {
 	// console.log(actors);
 	return (
-		<section className="grid grid-cols-1 lg:grid-cols-2 w-full place-items-center mt-8 ">
+		<section className="grid grid-cols-1 lg:grid-cols-2 w-full place-items-center mt-8 overflow-hidden ">
 			<div className="relative sm:h-[550px] sm:w-[384px] w-[295px] h-[470px] rounded-2xl overflow-hidden   shadow-2xl shadow-black dark:shadow-gray-600 lg:-mt-24 lg:mr-20 2xl:mr-0  ">
 				<img
 					alt="movie_poster"

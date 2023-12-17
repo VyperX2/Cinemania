@@ -5,12 +5,7 @@ import { fetchMovies } from "@/actions/fetchMovies";
 import LoadMore from "@/components/LoadMore";
 
 export default async function Home() {
-	// const response = await fetch(
-	// 	`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}`,
-	// 	{ cache: "no-store" }
-	// );
-	// const results = await response.json();
-	// const data: Data[] = await results.results;
+
 	const data = await fetchMovies(1);
 	const firstMovie = data[0];
 	const remainingMovies = data.filter(

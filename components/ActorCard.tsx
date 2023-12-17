@@ -10,6 +10,8 @@ const ActorCard = ({
 	i,
 }: Actors & { i: number }) => {
 	const router = useRouter();
+  // 56446
+	// console.log(id);
 	return (
 		<motion.article
 			initial={{ y: 100, opacity: 0 }}

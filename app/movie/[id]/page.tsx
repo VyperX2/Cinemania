@@ -12,7 +12,7 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
 	);
 	const { cast } = await res.json();
 
-	console.log(cast);
+	// console.log(cast);
 	const actors: Actors[] = cast.slice(0, 6);
 	return (
 		<section className="mt-20 flex justify-center container">

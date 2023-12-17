@@ -1,8 +1,6 @@
 "use client";
 import { Data } from "@/types/Data";
 import MovieCard from "./MovieCard";
-import { useState } from "react";
-import { fetchMovies } from "@/actions/fetchMovies";
 interface FeedProps {
 	data: Data[];
 }

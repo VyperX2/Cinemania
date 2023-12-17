@@ -22,3 +22,12 @@ export interface Actors {
 	order: number;
 	character: string;
 }
+
+export interface ActorDetails {
+	also_known_as: string[];
+	biography: string;
+	birthday: string;
+	homepage: string;
+	profile_path: string;
+	name: string;
+}
